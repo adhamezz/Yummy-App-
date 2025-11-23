@@ -1,0 +1,323 @@
+ /* body { font-family: sans-serif; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; margin-bottom: 20px; }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    .grid-item img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .grid-item img:hover {
+      transform: scale(1.05);
+    }
+    .grid-item h3 {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 5px;
+    } */
+    /* عاوزين نظبط ال layer 
+   
+    ال هو الاتش ثري ال موجود داخل الجريد بكرا نعملها باذن الله ونظبط السايد بار وكل شيئ  */
+   
+   /* ==================================== */
+   /* loader */
+   #loadingScreen {
+  position: fixed;
+  inset: 0;
+  background: #000; /* خليها اللي انت عايزه */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+  transition: opacity 0.6s ease;
+}
+
+/* اللودر */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #555;
+  border-top-color: #FFC107; /* أصفر نفس لون اللوجو */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* لما يختفي */
+#loadingScreen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+      /* ===== LEFT FIXED NAVBAR ===== */
+        #leftNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px; 
+            height: 100vh;
+            background: #FFFFFF;
+            color: #333232;
+            z-index: 1000;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 0;
+            border-right: 1px solid #333;
+        }
+
+        #leftNav img {
+            width: 45px;
+            height: 45px;
+        }
+
+        #openSidebarBtn {
+            background: transparent;
+            border: none;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* عشان المحتوى الأساسي يبعد يمين */
+        #mainContent {
+            margin-left: 90px;
+        }
+   
+   @media (max-width: 768px) {
+    #leftNav {
+        height: 100% !important;   /* يجبره ياخد الارتفاع الحقيقي */
+        padding-bottom: 50px;        /* علشان الفوتر مايتقطعش */
+    }
+}
+
+   
+   
+   
+   
+   
+   
+   /* ============================================== */
+    .meal {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.meal img {
+    display: block;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* شكل اللير */
+.meal-layer {
+    position: absolute;
+    left: 0;
+    bottom: -100%;          /* مخبيه تحت الكارت */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);  /* لون شفاف */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.4s ease-in-out;      
+}
+
+/* لما نهوفر على الوجبة */
+.meal:hover .meal-layer {
+    bottom: 0;              /* يطلع من تحت لفوق */
+}
+
+/* شوية زوم بسيط على الصورة */
+.meal:hover img {
+    transform: scale(1.05);
+}
+/* =================== */
+#searchSection input::placeholder {
+    color: #aaa;
+}
+
+#searchSection input {
+    border-radius: 8px;
+    padding: 10px 14px;
+    
+}
+/* ======================== */
+.category-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-layer {
+    position: absolute;
+    left: 0;
+    bottom: -100%;     /* نبدأ مخفي من تحت */
+    width: 100%;
+    height: 100%;
+    background:#C7C5C5;
+    opacity: 0.8;
+    padding: 15px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: bottom 0.4s ease-in-out;   /* حركة ناعمة */
+}
+
+.category-card:hover .category-layer {
+    bottom: 0;         /* يطلع لفوق */
+}
+/* ============ */
+.meal-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.meal-card img {
+    transition: transform 0.4s ease-in-out;
+}
+
+.meal-card:hover img {
+    transform: scale(1.05);
+}
+
+.meal-layer {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    transition: bottom 0.4s ease-in-out;
+}
+
+.meal-card:hover .meal-layer {
+    bottom: 0;
+}
+/* ========================= */
+.ingredient-card {
+    background: rgba(255, 255, 255, 0.07);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ingredient-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+/* ================== */
+.contact-box {
+    background: #111;
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-box input {
+    background: #fff;
+    border: none !important;
+    outline: none !important;
+}
+
+#submitBtn {
+    transition: 0.3s;
+}
+
+#submitBtn:hover {
+    background: #dc3545;
+    color: #fff;
+}
+.error {
+    color: #ffb3b3;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+/* Popup message */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-box {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 320px;
+}
+
+.popup-box button {
+    margin-top: 10px;
+    padding: 7px 20px;
+}
+/* =====ميديا كويري = */
+/* على الموبايل خليه يبعد عن اليسار عشان السايد بار */
+@media (max-width: 767px) {
+    .mainContent {
+        margin-left: 95px !important;  /* ابعد شوية */
+    }
+
+    .meal {
+        margin-left: 10px; /* علشان الصور متتخنقش */
+    }
+}
+
+.offcanvas-backdrop {
+    display: none !important;
+}
+/* ======================= */
+#toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background: #FFC107; /* الأصفر */
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* دايرة */
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  z-index: 99999;
+  transition: 0.3s;
+}
+
+#toTop:hover {
+  background: #e0a800; /* أصفر غامق شوية */
+}

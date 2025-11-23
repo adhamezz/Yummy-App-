@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="images/yummy.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <!-- ===== FIXED VERTICAL NAV ===== -->
+    <div id="leftNav">
+  <!-- =======loader ===== -->
+    <div id="loadingScreen">
+    <div class="spinner"></div>
+</div>
+<!-- ===================================== -->
+        <!-- Logo -->
+        <img src="images/yummy.png" alt="logo">
+
+        <!-- Center Button -->
+        <button id="openSidebarBtn" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Footer icons -->
+        <div class="d-flex flex-column gap-3">
+            <i class="fa-brands fa-facebook fs-4"></i>
+            <i class="fa-brands fa-twitter fs-4"></i>
+            <i class="fa-solid fa-globe fs-4"></i>
+        </div>
+    </div>
+
+
+    <!-- ===== SIDEBAR (OFFCANVAS) ===== -->
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="sidebar" style="width: 260px;">
+
+        <div class="offcanvas-header border-bottom border-secondary">
+           <a href="index.html" class="text-white nav-link"><h5 class="offcanvas-title"> Yummy app</h5></a> 
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+
+            <!-- LINKS -->
+            <ul class="list-unstyled fs-5 mt-3">
+                <li class="mb-3"><a href="search.html" class="text-white nav-link">Search</a></li>
+                <li class="mb-3"><a href="categories.html" class="text-white nav-link">Categories</a></li>
+                <li class="mb-3"><a href="area.html" class="text-white nav-link">Area</a></li>
+                <li class="mb-3"><a href="ingredients.html" class="text-white nav-link">Ingredients</a></li>
+                <li class="mb-3"><a href="contact.html" class="text-white nav-link">Contact Us</a></li>
+            </ul>
+
+            <!-- FOOTER -->
+            <div class="text-center small">
+                <p class="m-0 text-white-50">Copyright Â© 2019 All Rights
+Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+   <div class="container py-5 mainContent" >
+
+    <div id="popup" class="popup d-none">
+        <div class="popup-box">
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <form id="contactForm" class="row g-3">
+
+        <div class="col-md-6">
+            <input id="name" class="form-control" placeholder="Enter Your Name">
+            <small class="error opacity-0">Only letters allowed</small>
+        </div>
+
+        <div class="col-md-6">
+            <input id="email" class="form-control" placeholder="Enter Your Email">
+            <small class="error opacity-0">Invalid Email</small>
+        </div>
+
+        <div class="col-md-6">
+            <input id="phone" class="form-control" placeholder="Enter Your Phone">
+            <small class="error opacity-0">Invalid Phone Number</small>
+        </div>
+
+        <div class="col-md-6">
+            <input id="age" class="form-control" placeholder="Enter Your Age">
+            <small class="error opacity-0">Invalid age</small>
+        </div>
+
+        <div class="col-md-6">
+            <input id="password" class="form-control" placeholder="Enter Your Password" type="password">
+            <small class="error opacity-0">Weak Password</small>
+        </div>
+
+        <div class="col-md-6">
+            <input id="repassword" class="form-control" placeholder="Re-password" type="password">
+            <small class="error opacity-0">Passwords do not match</small>
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-outline-danger px-4">Submit</button>
+        </div>
+    </form>
+</div>
+
+    <!-- ALERT BOX -->
+    <div id="alertBox" class="alert-box d-none">
+        <p id="alertMessage"></p>
+    </div>
+ <div id="toTop"><i class="fa-solid fa-arrow-up"></i></div>
+<script src="js/main.js" ></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
